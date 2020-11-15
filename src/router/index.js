@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
+import SignUp from '@/views/SignUp.vue'
+import Login from '@/views/Login.vue'
+import ResetPassword from '@/views/ResetPassword.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +18,21 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/signup',
+    name: SignUp,
+    component: SignUp
+  },
+  {
+    path: '/login',
+    name: Login,
+    component: Login
+  },
+  {
+    path: '/resetPassword',
+    name: ResetPassword,
+    component: ResetPassword
   }
 ]
 

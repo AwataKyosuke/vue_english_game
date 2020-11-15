@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>This is an Home page</h1>
+    <router-link to="/signup">会員登録</router-link>
   </div>
 </template>
 
