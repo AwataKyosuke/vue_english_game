@@ -8,7 +8,7 @@
       <!-- タブメニュー -->
       <v-tabs right>
         <v-tab v-for="menuItem in menuItems" :key="menuItem">
-          <v-btn @click="onTabClick(menuItem.name)">
+          <v-btn @click="redirectTo(menuItem.name)">
             <v-icon dark left v-text="menuItem.icon" />
             {{ menuItem.label }}
           </v-btn>
@@ -24,7 +24,7 @@
           <v-list-item v-for="menuItem in menuItems" :key="menuItem">
             <v-list-item-icon><v-icon v-text="menuItem.icon"></v-icon></v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title v-text="menuItem.label" @click="onMenuClick(menuItem.name)" />
+              <v-list-item-title v-text="menuItem.label" @click="redirectTo(menuItem.name)" />
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
@@ -46,6 +46,11 @@ export default {
         { name: 'User', icon: 'mdi-account', label: 'マイページ' },
         { name: 'Setting', icon: 'mdi-cog', label: '設定' }
       ]
+    }
+  },
+  methods: {
+    redirectTo (name) {
+      this.$router.push({ name: name })
     }
   }
 }
