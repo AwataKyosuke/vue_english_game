@@ -129,6 +129,7 @@
                 depressed
                 height="40px"
                 tile
+                @click="SignUp"
               >
                 会員登録
               </v-btn>
@@ -161,6 +162,12 @@ export default {
       rules: {
         required: value => !!value || '必須入力項目です。'
       }
+    }
+  },
+  methods: {
+    SignUp () {
+      this.$store.dispatch('signup', { email: this.email, password: this.password })
+      this.$router.push('/')
     }
   }
 }

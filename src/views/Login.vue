@@ -129,6 +129,7 @@
                 depressed
                 height="40px"
                 tile
+                @click="login"
               >
                 ログイン
               </v-btn>
@@ -162,6 +163,12 @@ export default {
       rules: {
         required: value => !!value || '必須入力項目です。'
       }
+    }
+  },
+  methods: {
+    login () {
+      this.$store.dispatch('login', { email: this.email, password: this.password })
+      this.$router.push('/')
     }
   }
 }
